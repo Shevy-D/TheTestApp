@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        Thread.sleep(2000)
+        Thread.sleep(1000)
         setTheme(R.style.Theme_TheTestApp)
 
         super.onCreate(savedInstanceState)
