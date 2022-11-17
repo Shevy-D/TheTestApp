@@ -53,9 +53,11 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/phones_button_background.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/style_text_selector.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/style_text_selector_category.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_hot_sales.xml" value="0.253125" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.1951219512195122" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/fragment_hot_sales.xml" value="0.4" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/hot_sales_container.xml" value="0.536" />
       </map>
     </option>
   </component>

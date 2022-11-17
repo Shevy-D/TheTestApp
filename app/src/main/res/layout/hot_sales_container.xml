@@ -9,39 +9,68 @@
     <ImageView
         android:id="@+id/image_hot_sale"
         android:layout_width="match_parent"
-        android:layout_height="182sp"
+        android:layout_height="190sp"
         android:background="@color/black_figma"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054"
+        app:layout_constraintVertical_bias="0.0"
         tools:src="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/circle_new"
+    <RelativeLayout
+        android:id="@+id/box_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32sp"
         android:layout_marginTop="23sp"
-        android:src="@drawable/ic_circle_new"
         app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
+        app:layout_constraintTop_toTopOf="@+id/image_hot_sale">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/markpro"
-        android:text="@string/new_text"
-        android:textColor="@color/white"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/circle_new"
-        app:layout_constraintEnd_toEndOf="@+id/circle_new"
-        app:layout_constraintStart_toStartOf="@+id/circle_new"
-        app:layout_constraintTop_toTopOf="@+id/circle_new"
-        tools:ignore="SmallSp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_circle_new" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="@string/new_text"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+
+    </RelativeLayout>
+
+    <!--    <ImageView
+            android:id="@+id/circle_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32sp"
+            android:layout_marginTop="23sp"
+            android:src="@drawable/ic_circle_new"
+            app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
+            app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/markpro"
+            android:text="@string/new_text"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/circle_new"
+            app:layout_constraintEnd_toEndOf="@+id/circle_new"
+            app:layout_constraintStart_toStartOf="@+id/circle_new"
+            app:layout_constraintTop_toTopOf="@+id/circle_new"
+            tools:ignore="SmallSp" />-->
 
     <TextView
         android:id="@+id/text_title"
@@ -70,36 +99,6 @@
         android:textSize="11sp"
         app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
         app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
-
-    <!--    <Button
-            android:layout_width="98sp"
-            android:layout_height="23sp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="140dp"
-            android:letterSpacing="-0.03"
-            android:text="@string/buy_now"
-            android:textColor="@color/black_figma"
-            android:textSize="11sp"
-            android:backgroundTint="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-            app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />-->
-
-    <!--    <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32sp"
-            android:layout_marginTop="124sp"
-            android:background="@drawable/buy_now_button"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/sfprodisplaybold"
-            android:letterSpacing="-0.03"
-            android:text="@string/buy_now"
-            android:textAllCaps="false"
-            android:textColor="@color/black_figma"
-            android:textSize="13sp"
-            app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-            app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />-->
 
     <ImageView
         android:id="@+id/btn_buy_now"
