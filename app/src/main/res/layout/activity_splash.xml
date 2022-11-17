@@ -6,13 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
+    <TextView
+        android:id="@+id/select_cate"
+        android:layout_width="wrap_content"
+        android:layout_height="36sp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/markpro"
+        android:gravity="center_horizontal|top"
+        android:letterSpacing="-0.01"
+        android:text="@string/select_cate"
+        android:textColor="@color/black_figma"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/view_all"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center_horizontal|top"
+        android:letterSpacing="-0.02"
+        android:text="@string/view_all"
+        android:textColor="@color/orange_figma"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="20dp"
+        android:focusable="false"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@null"
+        android:queryHint="@string/search"
+        android:searchIcon="@drawable/ic_search"
+        android:textSize="30sp"
+        android:theme="@style/AppSearchView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_cate" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchView"
+        app:srcCompat="@drawable/ic_circle_for_qr" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:srcCompat="@drawable/ic_qr" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        tools:layout_editor_absoluteY="221dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

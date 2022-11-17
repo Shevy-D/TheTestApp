@@ -1,31 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/marckpro"/>
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/select_cate"
+            android:layout_width="wrap_content"
+            android:layout_height="36sp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/markpro"
+            android:gravity="top"
+            android:letterSpacing="-0.01"
+            android:text="@string/select_cate"
+            android:textColor="@color/black_figma"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|top"
+            android:letterSpacing="-0.02"
+            android:text="@string/view_all"
+            android:textColor="@color/orange_figma"
+            android:textSize="15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:text="Button"
-        android:fontFamily="@font/marckpro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingTop="10sp">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/phonesRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/custom_icon_phones_rb"
+                    android:gravity="center"
+                    android:text="@string/phones"
+                    android:textColor="@drawable/style_text_selector_category"
+                    android:theme="@style/radioButtonStyle" />
+
+                <RadioButton
+                    android:id="@+id/computersRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableTop="@drawable/custom_icon_computers_rb"
+                    android:gravity="center"
+                    android:text="@string/computers"
+                    android:textColor="@drawable/style_text_selector_category"
+                    android:theme="@style/radioButtonStyle" />
+
+                <RadioButton
+                    android:id="@+id/healthRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableTop="@drawable/custom_icon_health_rb"
+                    android:gravity="center"
+                    android:text="@string/health"
+                    android:textColor="@drawable/style_text_selector_category"
+                    android:theme="@style/radioButtonStyle" />
+
+                <RadioButton
+                    android:id="@+id/booksRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableTop="@drawable/custom_icon_books_rb"
+                    android:gravity="center"
+                    android:text="@string/books"
+                    android:textColor="@drawable/style_text_selector_category"
+                    android:theme="@style/radioButtonStyle" />
+
+                <RadioButton
+                    android:id="@+id/sportRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableTop="@drawable/custom_icon_sport_rb"
+                    android:gravity="center"
+                    android:text="@string/sport"
+                    android:textColor="@drawable/style_text_selector_category"
+                    android:theme="@style/radioButtonStyle" />
+
+            </RadioGroup>
+        </HorizontalScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15sp">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:elevation="20dp"
+            android:focusable="false"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@null"
+            android:queryHint="@string/search"
+            android:searchIcon="@drawable/ic_search"
+            android:textSize="30sp"
+            android:theme="@style/AppSearchView" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="20sp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_circle_for_qr" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_qr" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
