@@ -336,5 +336,23 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            android:paddingTop="10sp">
+
+            <GridView
+                android:id="@+id/best_seller_rv"
+                android:layout_width="match_parent"
+                android:layout_height="474sp"
+                android:scrollbars="none"
+                android:numColumns="2"
+                android:padding="4sp"
+                tools:listitem="@layout/best_seller_container" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>

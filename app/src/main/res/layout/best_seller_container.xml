@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10sp"
+    android:paddingTop="10sp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bs_container_background"
+        android:layout_width="wrap_content"
+        android:layout_height="227sp"
+        android:background="@drawable/ic_best_seller_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/image_best_seller"
+            android:layout_width="181sp"
+            android:layout_height="168sp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@+id/bs_container_background"
+            app:layout_constraintEnd_toEndOf="@+id/bs_container_background"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/bs_container_background"
+            app:layout_constraintTop_toTopOf="@+id/bs_container_background"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@tools:sample/avatars" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="147sp"
+            android:layout_marginTop="6sp"
+            app:layout_constraintStart_toStartOf="@+id/image_best_seller"
+            app:layout_constraintTop_toTopOf="@+id/image_best_seller">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_circle_for_favorites"/>
+
+            <ImageView
+                android:id="@+id/image_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:src="@drawable/ic_heart_outlined" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/price_without_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:fontFamily="@font/markpro"
+            android:letterSpacing="-0.02"
+            android:text="Price 1"
+            android:textColor="@color/black_figma"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/title_best_seller"
+            app:layout_constraintStart_toStartOf="@+id/title_best_seller" />
+
+        <TextView
+            android:id="@+id/price_with_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7sp"
+            android:fontFamily="@font/markpro"
+            android:letterSpacing="-0.02"
+            android:text="Price 2"
+            android:textColor="#CCCCCC"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/price_without_discount"
+            app:layout_constraintStart_toEndOf="@+id/price_without_discount" />
+
+        <TextView
+            android:id="@+id/title_best_seller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21sp"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="@font/markpro"
+            android:letterSpacing="-0.03"
+            android:text="Title"
+            android:textColor="@color/black_figma"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bs_container_background"
+            app:layout_constraintStart_toStartOf="@+id/bs_container_background" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
