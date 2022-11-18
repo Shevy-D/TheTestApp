@@ -1,15 +1,14 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.notuseyet
 
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ListAdapter
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.shevy.thetestapp.R
 import com.shevy.thetestapp.model.BestSeller
 
 

@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.GridView
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.model.BestSeller
 import com.shevy.thetestapp.model.HomeStore
+import com.shevy.thetestapp.notuseyet.BestSellerAdapter
 
 
 class MainActivity : AppCompatActivity() {
