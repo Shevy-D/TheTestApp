@@ -32,29 +32,33 @@
             app:layout_constraintVertical_bias="0.0"
             tools:src="@tools:sample/avatars" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="147sp"
-            android:layout_marginTop="6sp"
-            app:layout_constraintStart_toStartOf="@+id/image_best_seller"
-            app:layout_constraintTop_toTopOf="@+id/image_best_seller">
-
-            <com.mikhaellopez.circularimageview.CircularImageView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="24sp"
                 android:layout_height="24sp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/ic_circle_for_favorites"/>
+                app:cardCornerRadius="15sp"
+                app:cardElevation="20sp"
+                android:layout_marginStart="147sp"
+                android:layout_marginTop="6sp"
+                app:layout_constraintStart_toStartOf="@+id/image_best_seller"
+                app:layout_constraintTop_toTopOf="@+id/image_best_seller">
 
-            <ImageView
-                android:id="@+id/image_favorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:elevation="20dp"
-                android:src="@drawable/ic_heart_outlined" />
+<!--                <ImageView
+                    android:layout_width="24sp"
+                    android:layout_height="24sp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_circle_for_favorites"/>-->
 
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/image_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:elevation="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_heart_outlined" />
+
+            </com.google.android.material.card.MaterialCardView>
+
 
         <TextView
             android:id="@+id/price_without_discount"
