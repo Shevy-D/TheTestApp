@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable-v24/ic_heart_filled.xml" value="0.208" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable-v24/ic_heart_outlined.xml" value="0.208" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.1805" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/buy_now_button.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_btn_buy_now.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon.xml" value="0.1" />
@@ -14,6 +15,11 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon_phone_rb.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon_sport_rb.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_arrow_down.xml" value="0.208" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_arrow_for_bottom_sheet.xml" value="0.195" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_background_bottom_sheet.xml" value="0.1" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_background_category_bottom_sheet.xml" value="0.1515" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_background_nb.xml" value="0.178" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_bag_nb.xml" value="0.178" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_bag_white.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_baseline_sports_kabaddi_24.xml" value="0.208" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_best_seller_background.xml" value="0.208" />
@@ -30,16 +36,21 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_circle_for_rb_unchecked.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_circle_for_widget.xml" value="0.1615" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_circle_new.xml" value="0.1265" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_close_btn.xml" value="0.1645" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_computers.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_computers_grey.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_computers_selector_background_checked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_computers_selector_checked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_computers_selector_unchecked.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_done_btn.xml" value="0.1645" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_explorer_nb.xml" value="0.147" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_explorer_tetx_nb.xml" value="0.178" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_filter.xml" value="0.1545" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_health_grey.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_health_selector_checked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_health_selector_unchecked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_health_white.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_heart_nb.xml" value="0.178" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_heart_outlined.xml" value="0.157" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_heartcategories.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_gray.xml" value="0.1365" />
@@ -47,6 +58,8 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_selector_background_unchecked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_selector_checked.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_white.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_point_nb.xml" value="0.178" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_profile_nb.xml" value="0.178" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_rectangle_12.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_rectangle_12rectangle12.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_rectangle_for_rb.xml" value="0.1" />
@@ -64,12 +77,16 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/phones_button_background.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/style_text_selector.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/style_text_selector_category.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/test.xml" value="0.178" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/test_shadow.xml" value="0.1125" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_hot_sales.xml" value="0.253125" />
-        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.1951219512195122" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_splash.xml" value="0.264" />
-        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/best_seller_container.xml" value="0.8" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/best_seller_container.xml" value="0.5526315789473685" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/fragment_hot_sales.xml" value="0.4" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/hot_sales_container.xml" value="0.16608996539792387" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.2" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/menu/bottom_nav.xml" value="0.14739583333333334" />
       </map>
     </option>
   </component>

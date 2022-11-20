@@ -4,10 +4,14 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.GridView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.model.BestSeller
 import com.shevy.thetestapp.model.HomeStore
@@ -34,13 +38,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
+        showFilterBottomSheet()
+
         initAdapterHotSales()
         initRecyclerViewBestSeller()
     }
 
+    private fun showFilterBottomSheet() {
+        val bottomSheetButton = binding.showFilter
+
+        bottomSheetButton.setOnClickListener {
+
+            val bottomSheetDialog =
+                BottomSheetDialog(this@MainActivity, R.style.BottomSheetDialogTheme)
+           val bottomSheetView = LayoutInflater.from(applicationContext).inflate(R.layout.layout_bottom_sheet, findViewById(R.id.bottomSheetContainer))
+/*             bottomSheetView.findViewById<Button>(R.id.buttonShare).setOnClickListener {
+                Toast.makeText(this@MainActivity, "Share...", Toast.LENGTH_SHORT).show()
+                bottomSheetDialog.dismiss()
+            }*/
+            bottomSheetDialog.setContentView(bottomSheetView)
+            bottomSheetDialog.show()
+        }
+    }
+
     private fun initRecyclerViewBestSeller() {
 
-        bestSellerGridView = binding.bestSellerRv
+        bestSellerGridView = binding.bestSellerGridview
         val bestSellerList = ArrayList<BestSeller>()
 
         bestSellerList.add(

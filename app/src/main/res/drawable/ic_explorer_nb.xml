@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:drawable="@drawable/ic_point_nb"
+    android:gravity="left|center_vertical" />
+<item
+    android:drawable="@drawable/ic_explorer_tetx"
+    android:left="15sp"/>
+</layer-list>
