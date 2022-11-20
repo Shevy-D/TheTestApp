@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.shevy.thetestapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,7 +29,7 @@
         </activity>
         <activity
             android:name=".notuseyet.SplashActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

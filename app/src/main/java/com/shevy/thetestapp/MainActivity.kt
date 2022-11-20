@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
@@ -15,7 +16,11 @@ import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.databinding.LayoutBottomSheetBinding
 import com.shevy.thetestapp.model.BestSeller
 import com.shevy.thetestapp.model.HomeStore
+import com.shevy.thetestapp.model.Product
 import com.shevy.thetestapp.notuseyet.BestSellerAdapter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
@@ -146,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         handler = Handler(Looper.myLooper()!!)
         product = ArrayList()
 
-        product.add(
+/*        product.add(
             HomeStore(
                 1,
                 is_buy = true,
@@ -177,12 +182,38 @@ class MainActivity : AppCompatActivity() {
                 subtitle = "Súper. Mega. Rápido.",
                 title = "Xiaomi Mi 11 ultra"
             )
-        )
+        )*/
 
         hotSalesAdapter = HotSalesAdapter(product, viewPager)
 
 
         viewPager.adapter = hotSalesAdapter
+
+
+        val apiInterface = ApiInterface.create().getProducts()
+
+        apiInterface.enqueue(object : Callback<Product> {
+            override fun onResponse(
+                call: Call<Product>,
+                response: Response<Product>
+            ) {
+
+                Log.d("testLogs", "OnResponse success ${response.body()?.home_store?.get(0)?.title}")
+
+/*                if(response?.body() != null)
+                    hotSalesAdapter.setMovieListItems(response.body()!!)*/
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                Log.d("testLogs", "OnResponse failure ${t.message}")
+            }
+        })
+
+
+
+
+
+
         viewPager.run {
             offscreenPageLimit = 3
             clipToPadding = false
