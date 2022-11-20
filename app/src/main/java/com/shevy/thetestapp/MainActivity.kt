@@ -60,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         val bindingBSh = LayoutBottomSheetBinding.inflate(layoutInflater)
-        //val spinnerPrice = findViewById<Spinner>(R.id.spinner_id)
         val spinnerPrice = bindingBSh.spinnerId
         spinnerPrice.adapter = priceAdapter
 
