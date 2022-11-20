@@ -14,6 +14,7 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon_health_rb.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon_phone_rb.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/custom_icon_sport_rb.xml" value="0.1365" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/delete_it_ic_done_btn.xml" value="0.1075" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_arrow_down.xml" value="0.208" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_arrow_for_bottom_sheet.xml" value="0.195" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_background_bottom_sheet.xml" value="0.1" />
@@ -87,6 +88,8 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/hot_sales_container.xml" value="0.16608996539792387" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.2" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/menu/bottom_nav.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/dmitr/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.1" />
+        <entry key="..\:/Users/dmitr/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.1" />
       </map>
     </option>
   </component>

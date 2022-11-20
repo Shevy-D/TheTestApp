@@ -5,9 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.GridView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -40,8 +39,36 @@ class MainActivity : AppCompatActivity() {
 
         showFilterBottomSheet()
 
+        //testFunctionForSpinnerInBottomSheet()
+
         initAdapterHotSales()
         initRecyclerViewBestSeller()
+    }
+
+    private fun testFunctionForSpinnerInBottomSheet() {
+        val priceList = arrayListOf(
+            "\$0 - \$500",
+            "\$300 - \$500",
+            "\$500 - \$1000",
+            "\$1000 - \$10000"
+        )
+
+        val priceAdapter =
+            ArrayAdapter(baseContext, android.R.layout.simple_spinner_item, priceList)
+
+        priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        val spinnerPrice = findViewById<Spinner>(R.id.spinner_id)
+        spinnerPrice.adapter = priceAdapter
+
+        spinnerPrice.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                Toast.makeText(baseContext, p0?.selectedItem.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+        }
     }
 
     private fun showFilterBottomSheet() {
@@ -51,14 +78,18 @@ class MainActivity : AppCompatActivity() {
 
             val bottomSheetDialog =
                 BottomSheetDialog(this@MainActivity, R.style.BottomSheetDialogTheme)
-           val bottomSheetView = LayoutInflater.from(applicationContext).inflate(R.layout.layout_bottom_sheet, findViewById(R.id.bottomSheetContainer))
+            val bottomSheetView = LayoutInflater.from(applicationContext)
+                .inflate(R.layout.layout_bottom_sheet, findViewById(R.id.bottomSheetContainer))
 /*             bottomSheetView.findViewById<Button>(R.id.buttonShare).setOnClickListener {
                 Toast.makeText(this@MainActivity, "Share...", Toast.LENGTH_SHORT).show()
                 bottomSheetDialog.dismiss()
             }*/
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
+
+            //testFunctionForSpinnerInBottomSheet()
         }
+        testFunctionForSpinnerInBottomSheet()
     }
 
     private fun initRecyclerViewBestSeller() {
