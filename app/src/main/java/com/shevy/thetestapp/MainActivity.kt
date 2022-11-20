@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shevy.thetestapp.databinding.ActivityMainBinding
+import com.shevy.thetestapp.databinding.LayoutBottomSheetBinding
 import com.shevy.thetestapp.model.BestSeller
 import com.shevy.thetestapp.model.HomeStore
 import com.shevy.thetestapp.notuseyet.BestSellerAdapter
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         showFilterBottomSheet()
 
-        //testFunctionForSpinnerInBottomSheet()
+        testFunctionForSpinnerInBottomSheet()
 
         initAdapterHotSales()
         initRecyclerViewBestSeller()
@@ -58,7 +59,9 @@ class MainActivity : AppCompatActivity() {
 
         priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        val spinnerPrice = findViewById<Spinner>(R.id.spinner_id)
+        val bindingBSh = LayoutBottomSheetBinding.inflate(layoutInflater)
+        //val spinnerPrice = findViewById<Spinner>(R.id.spinner_id)
+        val spinnerPrice = bindingBSh.spinnerId
         spinnerPrice.adapter = priceAdapter
 
         spinnerPrice.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -86,10 +89,7 @@ class MainActivity : AppCompatActivity() {
             }*/
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
-
-            //testFunctionForSpinnerInBottomSheet()
         }
-        testFunctionForSpinnerInBottomSheet()
     }
 
     private fun initRecyclerViewBestSeller() {
