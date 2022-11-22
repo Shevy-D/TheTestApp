@@ -15,7 +15,7 @@ import com.shevy.thetestapp.model.BestSeller
 
 class BestSellerGridViewAdapter(
     private val context: Context,
-    private val bestSellerList: ArrayList<BestSeller>
+    private val bestSellerList: List<BestSeller>
 ) :
     BaseAdapter() {
 
@@ -62,39 +62,3 @@ class BestSellerGridViewAdapter(
         return view
     }
 }
-
-/*
-class ProductAdapter(context: Context, products: List<Product>) :
-    BaseAdapter() {
-    private val context: Context
-    private val products: List<Product>
-    override fun getCount(): Int {
-        return products.size
-    }
-
-    override fun getItem(position: Int): Any {
-        return products[position]
-    }
-
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val button: Button
-        if (convertView == null) {
-            button = Button(context)
-            button.setText(products[position].getName())
-        } else {
-            button = convertView as Button
-        }
-        button.setId(position)
-        return button
-    }
-
-    init {
-        this.context = context
-        this.products = products
-    }
-}
-*/
