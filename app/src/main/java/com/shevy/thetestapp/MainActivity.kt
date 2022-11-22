@@ -151,9 +151,9 @@ class MainActivity : AppCompatActivity() {
         handler = Handler(Looper.myLooper()!!)
         product = ArrayList()
 
-        val apiInterface = ApiInterface.create().getProducts()
+        val getHotSalesInterface = GetHotSalesInterface.create().getProducts()
 
-        apiInterface.enqueue(object : Callback<Product> {
+        getHotSalesInterface.enqueue(object : Callback<Product> {
             override fun onResponse(
                 call: Call<Product>,
                 response: Response<Product>

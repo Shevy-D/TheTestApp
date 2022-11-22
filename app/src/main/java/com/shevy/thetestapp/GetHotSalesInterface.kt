@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-interface ApiInterface {
+interface GetHotSalesInterface {
 
     //https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175
 
@@ -17,13 +17,13 @@ interface ApiInterface {
 
         var BASE_URL = "https://run.mocky.io/"
 
-        fun create() : ApiInterface {
+        fun create() : GetHotSalesInterface {
 
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build()
-            return retrofit.create(ApiInterface::class.java)
+            return retrofit.create(GetHotSalesInterface::class.java)
 
         }
     }
