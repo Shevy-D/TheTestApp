@@ -1,6 +1,5 @@
 package com.shevy.thetestapp
 
-import com.shevy.thetestapp.model.HomeStore
 import com.shevy.thetestapp.model.Product
 import retrofit2.Call
 import retrofit2.Retrofit

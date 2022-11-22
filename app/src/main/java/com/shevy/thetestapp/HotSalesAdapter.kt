@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.shevy.thetestapp.model.HomeStore
 
 class HotSalesAdapter(
-    private val product: ArrayList<HomeStore>,
+    private val product: List<HomeStore>,
     private val viewPager2: ViewPager2
 ) :
     RecyclerView.Adapter<HotSalesAdapter.HotSalesViewHolder>() {
@@ -44,16 +44,16 @@ class HotSalesAdapter(
         if (!itemProducts.is_new){
             holder.new.visibility = View.GONE
         }
-        if (position == product.size - 1) {
+/*        if (position == product.size - 1) {
             viewPager2.post(runnable)
-        }
+        }*/
     }
 
     override fun getItemCount(): Int = product.size
 
-    @SuppressLint("NotifyDataSetChanged")
+/*    @SuppressLint("NotifyDataSetChanged")
     private val runnable = Runnable {
         product.addAll(product)
         notifyDataSetChanged()
-    }
+    }*/
 }

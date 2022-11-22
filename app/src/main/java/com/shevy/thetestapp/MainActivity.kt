@@ -151,45 +151,6 @@ class MainActivity : AppCompatActivity() {
         handler = Handler(Looper.myLooper()!!)
         product = ArrayList()
 
-/*        product.add(
-            HomeStore(
-                1,
-                is_buy = true,
-                is_new = true,
-                picture = "https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both",
-                subtitle = "Súper. Mega. Rápido.",
-                title = "Iphone 12"
-            )
-        )
-
-        product.add(
-            HomeStore(
-                2,
-                is_buy = true,
-                is_new = false,
-                picture = "https://cdn-2.tstatic.net/kupang/foto/bank/images/pre-order-samsung-galaxy-a71-laris-manis-inilah-rekomendasi-ponsel-harga-rp-6-jutaan.jpg",
-                subtitle = "Súper. Mega. Rápido.",
-                title = "Samsung Galaxy A71"
-            )
-        )
-
-        product.add(
-            HomeStore(
-                3,
-                is_buy = true,
-                is_new = false,
-                picture = "https://static.digit.in/default/942998b8b4d3554a6259aeb1a0124384dbe0d4d5.jpeg",
-                subtitle = "Súper. Mega. Rápido.",
-                title = "Xiaomi Mi 11 ultra"
-            )
-        )*/
-
-        hotSalesAdapter = HotSalesAdapter(product, viewPager)
-
-
-        viewPager.adapter = hotSalesAdapter
-
-
         val apiInterface = ApiInterface.create().getProducts()
 
         apiInterface.enqueue(object : Callback<Product> {
@@ -197,22 +158,20 @@ class MainActivity : AppCompatActivity() {
                 call: Call<Product>,
                 response: Response<Product>
             ) {
+                Log.d(
+                    "testLogs",
+                    "OnResponse success ${response.body()?.home_store?.get(0)?.title}"
+                )
 
-                Log.d("testLogs", "OnResponse success ${response.body()?.home_store?.get(0)?.title}")
-
-/*                if(response?.body() != null)
-                    hotSalesAdapter.setMovieListItems(response.body()!!)*/
+                hotSalesAdapter =
+                    HotSalesAdapter(response.body()?.home_store ?: emptyList(), viewPager)
+                viewPager.adapter = hotSalesAdapter
             }
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
-
-
-
-
-
 
         viewPager.run {
             offscreenPageLimit = 3
