@@ -1,29 +1,29 @@
 package com.shevy.thetestapp.data
 
-import com.shevy.thetestapp.data.model.products.Product
+import com.shevy.thetestapp.data.model.detail.Detail
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-interface GetProductsInterface {
+interface GetDetailInterface {
 
-    //https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175
+    //https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5
 
-    @GET("v3/654bd15e-b121-49ba-a588-960956b15175")
-    fun getProducts() : Call<Product>
+    @GET("v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5")
+    fun getDetail() : Call<Detail>
 
     companion object {
 
         var BASE_URL = "https://run.mocky.io/"
 
-        fun create() : GetProductsInterface {
+        fun create() : GetDetailInterface {
 
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build()
-            return retrofit.create(GetProductsInterface::class.java)
+            return retrofit.create(GetDetailInterface::class.java)
 
         }
     }

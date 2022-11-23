@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.model.BestSeller
+import com.shevy.thetestapp.data.model.products.BestSeller
 
 
 class BestSellerGridViewAdapter(

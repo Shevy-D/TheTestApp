@@ -7,11 +7,9 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/image_hot_sale"
+        android:id="@+id/image_details"
         android:layout_width="match_parent"
-        android:layout_height="190sp"
-        android:background="@color/black_from_figma"
-        android:scaleType="centerCrop"
+        android:layout_height="349sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -19,83 +17,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:src="@tools:sample/avatars" />
-
-    <RelativeLayout
-        android:id="@+id/box_new"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="23sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_circle_new" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/sfprodisplaybold"
-            android:text="@string/new_text"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            tools:ignore="SmallSp" />
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="68sp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:letterSpacing="-0.01"
-        android:text="Title"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
-
-    <TextView
-        android:id="@+id/text_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="103sp"
-        android:fontFamily="@font/sfproisplayregular"
-        android:letterSpacing="-0.03"
-        android:text="Description"
-        android:textColor="@color/white"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
-
-    <ImageView
-        android:id="@+id/btn_buy_now"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="142sp"
-        android:background="@drawable/ic_btn_buy_now_background"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:letterSpacing="-0.03"
-        android:text="@string/buy_now"
-        android:textColor="@color/black_from_figma"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_buy_now"
-        app:layout_constraintEnd_toEndOf="@+id/btn_buy_now"
-        app:layout_constraintStart_toStartOf="@+id/btn_buy_now"
-        app:layout_constraintTop_toTopOf="@+id/btn_buy_now" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

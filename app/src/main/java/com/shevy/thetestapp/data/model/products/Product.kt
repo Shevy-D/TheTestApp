@@ -1,4 +1,4 @@
-package com.shevy.thetestapp.data.model
+package com.shevy.thetestapp.data.model.products
 
 data class Product(
     val best_seller: List<BestSeller>,

@@ -10,16 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.model.HomeStore
+import com.shevy.thetestapp.data.model.products.HomeStore
 
 class HotSalesAdapter(
-    private val product: List<HomeStore>,
-    private val viewPager2: ViewPager2
+    private val product: List<HomeStore>
 ) :
     RecyclerView.Adapter<HotSalesAdapter.HotSalesViewHolder>() {
 
     class HotSalesViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-        //private val binding = Recyclerview
         val productView: ImageView = itemView.findViewById(R.id.image_hot_sale)
         val title: TextView = itemView.findViewById(R.id.text_title)
         val description: TextView = itemView.findViewById(R.id.text_description)

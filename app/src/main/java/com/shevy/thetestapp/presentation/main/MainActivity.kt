@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shevy.thetestapp.data.GetProductsInterface
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.databinding.ActivityMainBinding
-import com.shevy.thetestapp.data.model.Product
+import com.shevy.thetestapp.data.model.products.Product
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                 )*/
 
                 hotSalesAdapter =
-                    HotSalesAdapter(response.body()?.home_store ?: emptyList(), viewPager)
+                    HotSalesAdapter(response.body()?.home_store ?: emptyList())
                 viewPager.adapter = hotSalesAdapter
             }
 

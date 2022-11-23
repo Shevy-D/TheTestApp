@@ -14,4 +14,5 @@
 
     <color name="orange_from_figma">#FF6E4E</color>
     <color name="black_from_figma">#010035</color>
+    <color name="yellow_for_rating_stars">#FFB800</color>
 </resources>
