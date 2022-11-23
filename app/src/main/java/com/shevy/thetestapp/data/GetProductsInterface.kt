@@ -1,6 +1,6 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.data
 
-import com.shevy.thetestapp.model.Product
+import com.shevy.thetestapp.data.model.Product
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory

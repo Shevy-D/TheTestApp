@@ -1,4 +1,4 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.presentation.main
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,7 +10,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.shevy.thetestapp.model.BestSeller
+import com.shevy.thetestapp.R
+import com.shevy.thetestapp.data.model.BestSeller
 
 
 class BestSellerGridViewAdapter(

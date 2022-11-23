@@ -1,4 +1,4 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.presentation.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,13 +7,14 @@ import android.os.Looper
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.shevy.thetestapp.data.GetProductsInterface
 import com.shevy.thetestapp.databinding.ActivityDetailsBinding
-import com.shevy.thetestapp.model.Product
+import com.shevy.thetestapp.data.model.Product
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailsActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2

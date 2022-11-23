@@ -1,18 +1,19 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.presentation.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.shevy.thetestapp.data.GetProductsInterface
+import com.shevy.thetestapp.R
 import com.shevy.thetestapp.databinding.ActivityMainBinding
-import com.shevy.thetestapp.model.Product
+import com.shevy.thetestapp.data.model.Product
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

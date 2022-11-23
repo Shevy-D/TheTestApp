@@ -1,4 +1,4 @@
-package com.shevy.thetestapp.model
+package com.shevy.thetestapp.data.model
 
 data class HomeStore(
     val id: Int,

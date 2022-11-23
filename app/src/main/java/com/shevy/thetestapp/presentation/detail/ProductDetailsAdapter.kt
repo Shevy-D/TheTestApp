@@ -1,6 +1,5 @@
-package com.shevy.thetestapp
+package com.shevy.thetestapp.presentation.detail
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +9,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.shevy.thetestapp.model.HomeStore
+import com.shevy.thetestapp.R
+import com.shevy.thetestapp.data.model.HomeStore
 
-class HotSalesAdapter(
+class ProductDetailsAdapter(
     private val product: List<HomeStore>,
     private val viewPager2: ViewPager2
 ) :
-    RecyclerView.Adapter<HotSalesAdapter.HotSalesViewHolder>() {
+    RecyclerView.Adapter<ProductDetailsAdapter.HotSalesViewHolder>() {
 
     class HotSalesViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         //private val binding = Recyclerview
@@ -28,7 +28,7 @@ class HotSalesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotSalesViewHolder {
         return HotSalesViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.hot_sales_container, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.product_details_container, parent, false)
         )
     }
 
