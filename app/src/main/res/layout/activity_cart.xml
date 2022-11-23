@@ -83,7 +83,6 @@
                     android:id="@+id/hot_sales"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp"
                     android:fontFamily="@font/markpro"
                     android:letterSpacing="-0.01"
                     android:text="@string/my_cart"
