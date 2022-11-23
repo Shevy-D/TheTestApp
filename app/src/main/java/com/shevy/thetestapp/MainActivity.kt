@@ -6,18 +6,13 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
-import android.widget.*
+import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shevy.thetestapp.databinding.ActivityMainBinding
-import com.shevy.thetestapp.databinding.LayoutBottomSheetBinding
-import com.shevy.thetestapp.model.BestSeller
-import com.shevy.thetestapp.model.HomeStore
 import com.shevy.thetestapp.model.Product
-import com.shevy.thetestapp.notuseyet.BestSellerAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,17 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var hotSalesAdapter: HotSalesAdapter
-    private lateinit var bestSellerAdapter: BestSellerAdapter
     private lateinit var bestSellerGridViewAdapter: BestSellerGridViewAdapter
     private lateinit var viewPager: ViewPager2
     private lateinit var handler: Handler
-    private lateinit var product: ArrayList<HomeStore>
     private lateinit var bestSellerGridView: GridView
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        Thread.sleep(1000)
+        Thread.sleep(500)
         setTheme(R.style.Theme_TheTestApp)
 
         super.onCreate(savedInstanceState)
@@ -45,13 +38,13 @@ class MainActivity : AppCompatActivity() {
 
         showFilterBottomSheet()
 
-        testFunctionForSpinnerInBottomSheet()
+        //testFunctionForSpinnerInBottomSheet()
 
         initAdapterHotSales()
         initRecyclerViewBestSeller()
     }
 
-    private fun testFunctionForSpinnerInBottomSheet() {
+/*    private fun testFunctionForSpinnerInBottomSheet() {
         val priceList = arrayListOf(
             "\$0 - \$500",
             "\$300 - \$500",
@@ -76,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
-    }
+    }*/
 
     private fun showFilterBottomSheet() {
         val bottomSheetButton = binding.showFilter
@@ -87,10 +80,6 @@ class MainActivity : AppCompatActivity() {
                 BottomSheetDialog(this@MainActivity, R.style.BottomSheetDialogTheme)
             val bottomSheetView = LayoutInflater.from(applicationContext)
                 .inflate(R.layout.layout_bottom_sheet, findViewById(R.id.bottomSheetContainer))
-/*             bottomSheetView.findViewById<Button>(R.id.buttonShare).setOnClickListener {
-                Toast.makeText(this@MainActivity, "Share...", Toast.LENGTH_SHORT).show()
-                bottomSheetDialog.dismiss()
-            }*/
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
         }
@@ -106,10 +95,10 @@ class MainActivity : AppCompatActivity() {
                 call: Call<Product>,
                 response: Response<Product>
             ) {
-                Log.d(
+/*                Log.d(
                     "testLogs",
                     "OnResponse success ${response.body()?.home_store?.get(0)?.title}"
-                )
+                )*/
 
                 bestSellerGridViewAdapter = BestSellerGridViewAdapter(
                     this@MainActivity,
@@ -119,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
-                Log.d("testLogs", "OnResponse failure ${t.message}")
+                //Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
     }
@@ -128,7 +117,6 @@ class MainActivity : AppCompatActivity() {
 
         viewPager = binding.viewPager
         handler = Handler(Looper.myLooper()!!)
-        product = ArrayList()
 
         val getProductsInterface = GetProductsInterface.create().getProducts()
         getProductsInterface.enqueue(object : Callback<Product> {
@@ -136,10 +124,10 @@ class MainActivity : AppCompatActivity() {
                 call: Call<Product>,
                 response: Response<Product>
             ) {
-                Log.d(
+/*                Log.d(
                     "testLogs",
                     "OnResponse success ${response.body()?.home_store?.get(0)?.title}"
-                )
+                )*/
 
                 hotSalesAdapter =
                     HotSalesAdapter(response.body()?.home_store ?: emptyList(), viewPager)
@@ -147,7 +135,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
-                Log.d("testLogs", "OnResponse failure ${t.message}")
+                //Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
 

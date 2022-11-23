@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#F5F5F5</color>
     <color name="grey">#B3B3C3</color>
+    <color name="grey_for_text_detail_category">#B7B7B7</color>
+    <color name="grey_for_text_capacity">#8D8D8D</color>
 
-    <color name="orange_figma">#FF6E4E</color>
-    <color name="black_figma">#010035</color>
+    <color name="orange_from_figma">#FF6E4E</color>
+    <color name="black_from_figma">#010035</color>
 </resources>

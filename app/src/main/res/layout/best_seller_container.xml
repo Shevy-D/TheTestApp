@@ -71,7 +71,7 @@
             android:fontFamily="@font/markpro"
             android:letterSpacing="-0.02"
             android:text="Price 1"
-            android:textColor="@color/black_figma"
+            android:textColor="@color/black_from_figma"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/title_best_seller"
@@ -100,7 +100,7 @@
             android:fontFamily="@font/markpro"
             android:letterSpacing="-0.03"
             android:text="Title"
-            android:textColor="@color/black_figma"
+            android:textColor="@color/black_from_figma"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/bs_container_background"
             app:layout_constraintStart_toStartOf="@+id/bs_container_background" />

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="vertical"
+    tools:context=".DetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36sp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42sp"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_arrow_left_btn" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/markpro"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/product_details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_from_figma"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="35sp"
+                        android:background="@drawable/ic_cart_btn" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30sp"
+                android:paddingBottom="7sp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager_product_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_background_bottom_sheet"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/markpro"
+                        android:letterSpacing="-0.01"
+                        android:paddingStart="38sp"
+                        android:text="Name Of Phone"
+                        android:textColor="@color/black_from_figma"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_favorites_btn_for_detail_product" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center">
+
+                    <!--Change it-->
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@id/shopRB"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="30sp"
+                        android:paddingEnd="27sp">
+
+                        <RadioButton
+                            android:id="@+id/shopRB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/custom_detail_line"
+                            android:fontFamily="@font/markpro"
+                            android:gravity="center"
+                            android:letterSpacing="-0.02"
+                            android:text="@string/shop"
+                            android:textColor="@drawable/style_text_detail_category"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/custom_detail_line"
+                            android:fontFamily="@font/markpro"
+                            android:gravity="center"
+                            android:letterSpacing="-0.02"
+                            android:text="@string/details"
+                            android:textColor="@drawable/style_text_detail_category"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/custom_detail_line"
+                            android:fontFamily="@font/markpro"
+                            android:gravity="center"
+                            android:letterSpacing="-0.02"
+                            android:text="@string/features"
+                            android:textColor="@drawable/style_text_detail_category"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="27sp"
+                    android:paddingTop="33sp"
+                    android:paddingEnd="27sp"
+                    android:paddingBottom="29sp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_cpu" />
+
+                        <TextView
+                            android:id="@+id/text_cpu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/markpro"
+                            android:letterSpacing="-0.02"
+                            android:paddingTop="5sp"
+                            android:text="CPU text"
+                            android:textAlignment="center"
+                            android:textColor="@color/grey_for_text_detail_category"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_camera" />
+
+                        <TextView
+                            android:id="@+id/text_camera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/markpro"
+                            android:letterSpacing="-0.02"
+                            android:paddingTop="5sp"
+                            android:text="Camera text"
+                            android:textAlignment="center"
+                            android:textColor="@color/grey_for_text_detail_category"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_ssd" />
+
+                        <TextView
+                            android:id="@+id/text_ssd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/markpro"
+                            android:letterSpacing="-0.02"
+                            android:paddingTop="5sp"
+                            android:text="SSD text"
+                            android:textAlignment="center"
+                            android:textColor="@color/grey_for_text_detail_category"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_sd" />
+
+                        <TextView
+                            android:id="@+id/text_sd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/markpro"
+                            android:letterSpacing="-0.02"
+                            android:paddingTop="5sp"
+                            android:text="SD text"
+                            android:textAlignment="center"
+                            android:textColor="@color/grey_for_text_detail_category"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30sp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/markpro"
+                        android:letterSpacing="-0.02"
+                        android:text="@string/text_select_c_n_c"
+                        android:textColor="@color/black_from_figma"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30sp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginEnd="30sp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkedButton="@id/color_one"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/color_one"
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/ic_circle_for_select_color"
+                                android:button="@null"
+                                android:fontFamily="@font/markpro"
+                                android:foreground="@drawable/custom_check_mark"
+                                android:foregroundGravity="center"
+                                android:gravity="center" />
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/color_two"
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:layout_marginStart="18sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/ic_circle_for_select_color"
+                                android:button="@null"
+                                android:fontFamily="@font/markpro"
+                                android:foreground="@drawable/custom_check_mark"
+                                android:foregroundGravity="center"
+                                android:gravity="center" />
+
+                        </RadioGroup>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkedButton="@id/capacity_one"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/capacity_one"
+                                android:layout_width="73sp"
+                                android:layout_height="31sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/custom_capacity_btn"
+                                android:button="@null"
+                                android:fontFamily="@font/markpro"
+                                android:gravity="center"
+                                android:letterSpacing="-0.02"
+                                android:text="128 GB"
+                                android:textColor="@drawable/style_text_capacity"
+                                android:textSize="13sp" />
+
+                            <RadioButton
+                                android:id="@+id/capacity_two"
+                                android:layout_width="73sp"
+                                android:layout_height="31sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/custom_capacity_btn"
+                                android:button="@null"
+                                android:fontFamily="@font/markpro"
+                                android:gravity="center"
+                                android:letterSpacing="-0.02"
+                                android:text="256 GB"
+                                android:textColor="@drawable/style_text_capacity"
+                                android:textSize="13sp" />
+
+                        </RadioGroup>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="30sp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_background_add_to_cart_btn" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            tools:ignore="RtlSymmetry">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/markpro"
+                                android:gravity="start"
+                                android:letterSpacing="-0.02"
+                                android:paddingStart="45sp"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/markpro"
+                                android:gravity="end"
+                                android:letterSpacing="-0.02"
+                                android:paddingEnd="38sp"
+                                android:text="$1,500.00"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
