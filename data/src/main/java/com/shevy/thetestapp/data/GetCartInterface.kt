@@ -11,13 +11,13 @@ interface GetCartInterface {
     //https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149
 
     @GET("v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149")
-    fun getCartItems() : Call<Basket>
+    fun getCartItems(): Call<Basket>
 
     companion object {
 
         var BASE_URL = "https://run.mocky.io/"
 
-        fun create() : GetCartInterface {
+        fun create(): GetCartInterface {
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create())
                 .baseUrl(BASE_URL)
