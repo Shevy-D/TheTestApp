@@ -5,10 +5,12 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.data.GetDetailInterface
@@ -17,14 +19,14 @@ import com.shevy.thetestapp.databinding.ActivityDetailsBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.abs
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
-    private lateinit var handler: Handler
     private lateinit var adapter: DetailsAdapter
-    private lateinit var responseDetail: Detail
+    //private val sliderHandler: Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,9 +39,6 @@ class DetailActivity : AppCompatActivity() {
 
         viewPager = binding.viewPagerProductDetails
 
-        //Does it need?
-        handler = Handler(Looper.myLooper()!!)
-
         val getDetailInterface = GetDetailInterface.create().getDetail()
         getDetailInterface.enqueue(object : Callback<Detail> {
             override fun onResponse(
@@ -51,13 +50,11 @@ class DetailActivity : AppCompatActivity() {
                     "OnResponse success ${response.body()}"
                 )
 
-                responseDetail = response.body()!!
-
                 adapter =
                     DetailsAdapter(response.body(), viewPager)
                 viewPager.adapter = adapter
 
-                initDetailViewData()
+                initDetailViewData(response.body()!!)
             }
 
             override fun onFailure(call: Call<Detail>, t: Throwable) {
@@ -65,16 +62,35 @@ class DetailActivity : AppCompatActivity() {
             }
         })
 
+        val transformer = CompositePageTransformer()
+        transformer.run {
+            addTransformer(MarginPageTransformer(40))
+            addTransformer(object : ViewPager2.PageTransformer {
+                override fun transformPage(page: View, position: Float) {
+                    val r = 1 - abs(position)
+                    page.scaleY = 0.85f + r * 0.14f
+                }
+            })
+        }
+
         viewPager.run {
             offscreenPageLimit = 3
-            clipToPadding = false
             clipChildren = false
+            clipToPadding = false
             getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            setPageTransformer(transformer)
+/*            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    sliderHandler.removeCallbacks(sliderRunnable)
+                    sliderHandler.postDelayed(sliderRunnable, 2000)
+                }
+            })*/
         }
     }
 
     @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
-    private fun initDetailViewData() {
+    private fun initDetailViewData(responseDetail: Detail) {
 
         binding.titleDetailItem.text = responseDetail.title
         binding.textCpu.text = responseDetail.CPU
@@ -113,10 +129,27 @@ class DetailActivity : AppCompatActivity() {
         }
 
         if (responseDetail.isFavorites) {
-            binding.favoriteBtnDetail.background = getDrawable(R.drawable.ic_favorites_btn_for_detail_product_checked)
+            binding.favoriteBtnDetail.background =
+                getDrawable(R.drawable.ic_favorites_btn_for_detail_product_checked)
         }
 
         val price = "$${(responseDetail.price / 1000)},${(responseDetail.price % 1000)}.00"
         binding.priceAddToCart.text = price
     }
+
+/*    private val sliderRunnable: Runnable = Runnable() {
+        run() {
+            viewPager.setCurrentItem(viewPager.currentItem + 1)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sliderHandler.removeCallbacks(sliderRunnable)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sliderHandler.postDelayed(sliderRunnable, 2000)
+    }*/
 }
