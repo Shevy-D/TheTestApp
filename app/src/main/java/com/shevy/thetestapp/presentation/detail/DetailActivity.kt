@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
     private lateinit var handler: Handler
-    private lateinit var testAdapter: DetailsAdapter
+    private lateinit var adapter: DetailsAdapter
     private lateinit var responseDetail: Detail
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
     private fun initAdapterProductDetails() {
 
         viewPager = binding.viewPagerProductDetails
+
+        //Does it need?
         handler = Handler(Looper.myLooper()!!)
 
         val getDetailInterface = GetDetailInterface.create().getDetail()
@@ -51,9 +53,9 @@ class DetailActivity : AppCompatActivity() {
 
                 responseDetail = response.body()!!
 
-                testAdapter =
+                adapter =
                     DetailsAdapter(response.body(), viewPager)
-                viewPager.adapter = testAdapter
+                viewPager.adapter = adapter
 
                 initDetailViewData()
             }

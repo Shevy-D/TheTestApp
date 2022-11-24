@@ -15,4 +15,6 @@
     <color name="orange_from_figma">#FF6E4E</color>
     <color name="black_from_figma">#010035</color>
     <color name="yellow_for_rating_stars">#FFB800</color>
+    <color name="grey_for_first_cart_line">#40FFFFFF</color>
+    <color name="grey_for_second_cart_line">#33FFFFFF</color>
 </resources>

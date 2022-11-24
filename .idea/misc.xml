@@ -45,6 +45,7 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_books_white.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_btn_buy_now_background.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_cart_btn.xml" value="0.151" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_cart_image_background.xml" value="0.1235" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_check_mark.xml" value="0.158" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_check_mark_checked.xml" value="0.1235" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_circle_favorite_111.xml" value="0.1725" />
@@ -82,6 +83,7 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_line_checked.xml" value="0.1195" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_line_unchecked.xml" value="0.1565" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_location_cart_btn.xml" value="0.1235" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_minus.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_gray.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_grey.xml" value="0.1365" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/ic_phones_selector_background_unchecked.xml" value="0.1365" />
@@ -112,12 +114,13 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/test.xml" value="0.178" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/drawable/test_shadow.xml" value="0.1125" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout-v23/activity_details.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_cart.xml" value="0.264" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_cart.xml" value="0.17214397496087636" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_details.xml" value="0.13872832369942195" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_hot_sales.xml" value="0.253125" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.30638297872340425" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/best_seller_container.xml" value="0.5526315789473685" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/cart_container.xml" value="0.2" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/fragment_hot_sales.xml" value="0.4" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/hot_sales_container.xml" value="0.16608996539792387" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.2" />

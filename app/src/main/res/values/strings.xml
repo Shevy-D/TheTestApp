@@ -30,4 +30,7 @@
     <string name="text_select_c_n_c">Select color and capacity</string>
     <string name="add_address">Add address</string>
     <string name="my_cart">My Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
 </resources>

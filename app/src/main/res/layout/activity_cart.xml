@@ -42,8 +42,8 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_alignParentEnd="true"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginEnd="35sp"
                         android:orientation="horizontal">
 
@@ -75,9 +75,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="62sp"
                 android:layout_marginStart="42sp"
-                android:orientation="horizontal">
+                android:layout_marginBottom="49sp"
+                android:orientation="horizontal"
+                android:paddingTop="62sp">
 
                 <TextView
                     android:id="@+id/hot_sales"
@@ -95,15 +96,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="30sp"
-                android:paddingBottom="7sp">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:background="@drawable/ic_background_bottom_sheet"
                 android:backgroundTint="@color/black_from_figma"
                 android:orientation="vertical">
@@ -111,411 +103,138 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="170sp"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/titleDetailItem"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/cartRV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/markpro"
-                        android:letterSpacing="-0.01"
-                        android:paddingStart="38sp"
-                        android:text="Name Of Phone"
-                        android:textColor="@color/black_from_figma"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:id="@+id/favorite_btn_detail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_favorites_btn_for_detail_product_unchecked" />
-
-                    </RelativeLayout>
+                        android:scrollbars="none"
+                        tools:listitem="@layout/cart_container" />
 
                 </LinearLayout>
 
-                <LinearLayout
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:gravity="center_vertical"
-                    android:paddingStart="38sp"
-                    tools:ignore="RtlSymmetry">
-
-                    <!--Change it-->
-
-                    <RatingBar
-                        android:id="@+id/ratingBar"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:theme="@style/MyRatingBar" />
-
-                </LinearLayout>
+                    android:layout_height="2dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/grey_for_first_cart_line"
+                    tools:ignore="SmallSp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checkedButton="@id/shopRB"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingStart="30sp"
-                        android:paddingTop="12sp"
-                        android:paddingEnd="27sp">
-
-                        <RadioButton
-                            android:id="@+id/shopRB"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:button="@null"
-                            android:drawableBottom="@drawable/custom_detail_line"
-                            android:fontFamily="@font/markpro"
-                            android:gravity="center"
-                            android:letterSpacing="-0.02"
-                            android:text="@string/shop"
-                            android:textColor="@drawable/style_text_detail_category"
-                            android:textSize="20sp" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:button="@null"
-                            android:drawableBottom="@drawable/custom_detail_line"
-                            android:fontFamily="@font/markpro"
-                            android:gravity="center"
-                            android:letterSpacing="-0.02"
-                            android:text="@string/details"
-                            android:textColor="@drawable/style_text_detail_category"
-                            android:textSize="20sp" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:button="@null"
-                            android:drawableBottom="@drawable/custom_detail_line"
-                            android:fontFamily="@font/markpro"
-                            android:gravity="center"
-                            android:letterSpacing="-0.02"
-                            android:text="@string/features"
-                            android:textColor="@drawable/style_text_detail_category"
-                            android:textSize="20sp" />
-
-                    </RadioGroup>
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingStart="27sp"
-                    android:paddingTop="33sp"
-                    android:paddingEnd="27sp"
-                    android:paddingBottom="29sp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@drawable/ic_cpu" />
-
-                        <TextView
-                            android:id="@+id/text_cpu"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/markpro"
-                            android:letterSpacing="-0.02"
-                            android:paddingTop="5sp"
-                            android:text="CPU text"
-                            android:textAlignment="center"
-                            android:textColor="@color/grey_for_text_detail_category"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@drawable/ic_camera" />
-
-                        <TextView
-                            android:id="@+id/text_camera"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/markpro"
-                            android:letterSpacing="-0.02"
-                            android:paddingTop="5sp"
-                            android:text="Camera text"
-                            android:textAlignment="center"
-                            android:textColor="@color/grey_for_text_detail_category"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@drawable/ic_ssd" />
-
-                        <TextView
-                            android:id="@+id/text_ssd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/markpro"
-                            android:letterSpacing="-0.02"
-                            android:paddingTop="5sp"
-                            android:text="SSD text"
-                            android:textAlignment="center"
-                            android:textColor="@color/grey_for_text_detail_category"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@drawable/ic_sd" />
-
-                        <TextView
-                            android:id="@+id/text_sd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/markpro"
-                            android:letterSpacing="-0.02"
-                            android:paddingTop="5sp"
-                            android:text="SD text"
-                            android:textAlignment="center"
-                            android:textColor="@color/grey_for_text_detail_category"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30sp"
-                    android:gravity="center">
+                    android:paddingStart="55sp"
+                    android:paddingTop="15sp"
+                    android:paddingEnd="35sp">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
                         android:fontFamily="@font/markpro"
+                        android:gravity="top"
                         android:letterSpacing="-0.02"
-                        android:text="@string/text_select_c_n_c"
-                        android:textColor="@color/black_from_figma"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:text="@string/total"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
 
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/markpro"
+                        android:gravity="end"
+                        android:letterSpacing="-0.02"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="$6,000 us" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="55sp"
+                    android:paddingTop="12sp"
+                    android:paddingEnd="35sp"
+                    android:paddingBottom="26sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/markpro"
+                        android:gravity="top"
+                        android:letterSpacing="-0.02"
+                        android:text="@string/delivery"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/delivery_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/markpro"
+                        android:gravity="end"
+                        android:letterSpacing="-0.02"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Free" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/grey_for_second_cart_line"
+                    tools:ignore="SmallSp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30sp"
-                    android:layout_marginTop="15sp"
-                    android:layout_marginEnd="30sp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checkedButton="@id/color_one"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/color_one"
-                                android:layout_width="40sp"
-                                android:layout_height="40sp"
-                                android:layout_weight="1"
-                                android:background="@drawable/ic_circle_for_select_color"
-                                android:button="@null"
-                                android:fontFamily="@font/markpro"
-                                android:foreground="@drawable/custom_check_mark"
-                                android:foregroundGravity="center"
-                                android:gravity="center" />
-
-                            <androidx.appcompat.widget.AppCompatRadioButton
-                                android:id="@+id/color_two"
-                                android:layout_width="40sp"
-                                android:layout_height="40sp"
-                                android:layout_marginStart="18sp"
-                                android:layout_weight="1"
-                                android:background="@drawable/ic_circle_for_select_color"
-                                android:button="@null"
-                                android:fontFamily="@font/markpro"
-                                android:foreground="@drawable/custom_check_mark"
-                                android:foregroundGravity="center"
-                                android:gravity="center" />
-
-                        </RadioGroup>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checkedButton="@id/capacity_one"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/capacity_one"
-                                android:layout_width="73sp"
-                                android:layout_height="31sp"
-                                android:layout_weight="1"
-                                android:background="@drawable/custom_capacity_btn"
-                                android:button="@null"
-                                android:fontFamily="@font/markpro"
-                                android:gravity="center"
-                                android:letterSpacing="-0.02"
-                                android:text="128 GB"
-                                android:textColor="@drawable/style_text_capacity"
-                                android:textSize="13sp" />
-
-                            <RadioButton
-                                android:id="@+id/capacity_two"
-                                android:layout_width="73sp"
-                                android:layout_height="31sp"
-                                android:layout_weight="1"
-                                android:background="@drawable/custom_capacity_btn"
-                                android:button="@null"
-                                android:fontFamily="@font/markpro"
-                                android:gravity="center"
-                                android:letterSpacing="-0.02"
-                                android:text="256 GB"
-                                android:textColor="@drawable/style_text_capacity"
-                                android:textSize="13sp" />
-
-                        </RadioGroup>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
+                    android:layout_marginStart="44sp"
+                    android:layout_marginTop="27sp"
+                    android:layout_marginEnd="44sp"
+                    android:layout_marginBottom="44sp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="30sp">
+                        android:layout_height="wrap_content">
 
                         <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="326sp"
+                            android:layout_height="54sp"
                             android:background="@drawable/ic_background_add_to_cart_btn" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/markpro"
-                                android:gravity="start"
-                                android:letterSpacing="-0.02"
-                                android:paddingStart="45sp"
-                                android:text="@string/add_to_cart"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/price_add_to_cart"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/markpro"
-                                android:gravity="end"
-                                android:letterSpacing="-0.02"
-                                android:paddingEnd="38sp"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                tools:ignore="RtlSymmetry"
-                                tools:text="$1,500.00" />
-                        </LinearLayout>
+                            android:fontFamily="@font/markpro"
+                            android:letterSpacing="-0.02"
+                            android:text="@string/checkout"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </RelativeLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 </LinearLayout>

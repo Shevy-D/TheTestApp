@@ -117,6 +117,8 @@ class MainActivity : AppCompatActivity() {
     private fun initAdapterHotSales() {
 
         viewPager = binding.viewPager
+
+        //Does it need?
         handler = Handler(Looper.myLooper()!!)
 
         val getProductsInterface = GetProductsInterface.create().getProducts()
