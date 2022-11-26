@@ -9,10 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.model.products.HomeStore
+import com.shevy.thetestapp.data.model.products.HomeStoreProducts
 
 class HotSalesAdapter(
-    private val product: List<HomeStore>
+    private val product: List<HomeStoreProducts>
 ) :
     RecyclerView.Adapter<HotSalesAdapter.HotSalesViewHolder>() {
 

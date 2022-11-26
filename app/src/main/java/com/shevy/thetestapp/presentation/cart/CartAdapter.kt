@@ -9,10 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.model.basket.BasketX
+import com.shevy.thetestapp.data.model.basket.HomeStoreBasket
 
 class CartAdapter(
-    private val cartItems: List<BasketX>?
+    private val cartItems: List<HomeStoreBasket>?
 ) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 

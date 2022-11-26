@@ -1,6 +1,6 @@
 package com.shevy.thetestapp.data.model.products
 
-data class HomeStore(
+data class HomeStoreProducts(
     val id: Int,
     val is_buy: Boolean,
     val is_new: Boolean,

@@ -1,6 +1,7 @@
 package com.shevy.thetestapp.presentation.main
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -14,6 +15,7 @@ import com.shevy.thetestapp.data.GetProductsInterface
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.data.model.products.Product
+import com.shevy.thetestapp.presentation.cart.CartActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         initAdapterHotSales()
         initRecyclerViewBestSeller()
+
+        binding.cartBottomNavigation.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }
     }
 
 /*    private fun testFunctionForSpinnerInBottomSheet() {

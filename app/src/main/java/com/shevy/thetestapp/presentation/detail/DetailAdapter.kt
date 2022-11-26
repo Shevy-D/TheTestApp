@@ -5,19 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.data.model.detail.Detail
 
-class DetailsAdapter(
+class DetailAdapter(
     private val detailsItem: Detail?
 ) :
-    RecyclerView.Adapter<DetailsAdapter.DetailViewHolder>() {
+    RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailViewHolder {
         return DetailViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.product_details_container, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.detail_container, parent, false)
         )
     }
 

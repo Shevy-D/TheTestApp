@@ -22,7 +22,7 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
-    private lateinit var adapter: DetailsAdapter
+    private lateinit var adapter: DetailAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class DetailActivity : AppCompatActivity() {
                 response: Response<Detail>
             ) {
                 adapter =
-                    DetailsAdapter(response.body())
+                    DetailAdapter(response.body())
                 viewPager.adapter = adapter
 
                 initDetailViewData(response.body()!!)
