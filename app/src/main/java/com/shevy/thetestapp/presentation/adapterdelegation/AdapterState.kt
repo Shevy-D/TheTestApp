@@ -1,11 +1,11 @@
-package com.shevy.thetestapp.presentation.adapterdelegation.delegate
+package com.shevy.thetestapp.presentation.adapterdelegation
 
 data class AdaptersState(
     private val adapters: List<DelegateAdapter>,
     val data: List<Any> = emptyList()
 ) {
 
-    private val adapterPositionsCache = Array<Int>(data.size) { -1 }
+    private val adapterPositionsCache = Array(data.size) { -1 }
 
     fun getAdapterPosition(itemPosition: Int): Int =
         adapterPositionsCache[itemPosition].takeIf { it != -1 }

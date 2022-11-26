@@ -1,10 +1,10 @@
-package com.shevy.thetestapp.presentation.adapterdelegation.adapters
+package com.shevy.thetestapp.presentation.cart
 
 import android.annotation.SuppressLint
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.data.model.basket.HomeStoreBasket
 import com.shevy.thetestapp.databinding.CartContainerBinding
-import com.shevy.thetestapp.presentation.adapterdelegation.delegate.ViewBindingDelegateAdapter
+import com.shevy.thetestapp.presentation.adapterdelegation.ViewBindingDelegateAdapter
 
 class CartDelegateAdapter: ViewBindingDelegateAdapter<HomeStoreBasket, CartContainerBinding>(CartContainerBinding::inflate) {
     @SuppressLint("SetTextI18n")

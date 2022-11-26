@@ -1,4 +1,4 @@
-package com.shevy.thetestapp.presentation.adapterdelegation.delegate
+package com.shevy.thetestapp.presentation.adapterdelegation
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -13,6 +13,7 @@ import com.shevy.thetestapp.R
 import com.shevy.thetestapp.data.GetDetailInterface
 import com.shevy.thetestapp.data.model.detail.Detail
 import com.shevy.thetestapp.databinding.ActivityDetailsBinding
+import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,13 +23,16 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
-    private lateinit var adapter: DetailAdapter
+    private lateinit var compositeDelegateAdapter: CompositeDelegateAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
         initAdapterProductDetails()
+        binding.backBtnProductDetail.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun initAdapterProductDetails() {
@@ -41,9 +45,11 @@ class DetailActivity : AppCompatActivity() {
                 call: Call<Detail>,
                 response: Response<Detail>
             ) {
-                adapter =
-                    DetailAdapter(response.body())
-                viewPager.adapter = adapter
+
+                compositeDelegateAdapter = CompositeDelegateAdapter(DetailDelegateAdapter())
+                viewPager.adapter = compositeDelegateAdapter
+
+                compositeDelegateAdapter.swapData(response.body()?.images ?: emptyList())
 
                 initDetailViewData(response.body()!!)
             }

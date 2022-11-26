@@ -1,11 +1,11 @@
-package com.shevy.thetestapp.presentation.adapterdelegation.adapters
+package com.shevy.thetestapp.presentation.main
 
 import android.annotation.SuppressLint
 import android.view.View
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.data.model.products.HomeStoreProducts
 import com.shevy.thetestapp.databinding.HotSalesContainerBinding
-import com.shevy.thetestapp.presentation.adapterdelegation.delegate.ViewBindingDelegateAdapter
+import com.shevy.thetestapp.presentation.adapterdelegation.ViewBindingDelegateAdapter
 
 class HotSalesDelegateAdapter: ViewBindingDelegateAdapter<HomeStoreProducts, HotSalesContainerBinding>(HotSalesContainerBinding::inflate) {
     @SuppressLint("SetTextI18n")

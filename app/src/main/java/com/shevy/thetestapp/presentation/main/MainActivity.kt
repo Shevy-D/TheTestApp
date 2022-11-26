@@ -3,8 +3,6 @@ package com.shevy.thetestapp.presentation.main
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +13,7 @@ import com.shevy.thetestapp.data.GetProductsInterface
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.data.model.products.Product
+import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
 import com.shevy.thetestapp.presentation.cart.CartActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,11 +23,10 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var hotSalesAdapter: HotSalesAdapter
     private lateinit var bestSellerGridViewAdapter: BestSellerGridViewAdapter
     private lateinit var viewPager: ViewPager2
-    private lateinit var handler: Handler
     private lateinit var bestSellerGridView: GridView
+    private lateinit var compositeDelegateAdapter: CompositeDelegateAdapter
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,11 +100,6 @@ class MainActivity : AppCompatActivity() {
                 call: Call<Product>,
                 response: Response<Product>
             ) {
-/*                Log.d(
-                    "testLogs",
-                    "OnResponse success ${response.body()?.home_store?.get(0)?.title}"
-                )*/
-
                 bestSellerGridViewAdapter = BestSellerGridViewAdapter(
                     this@MainActivity,
                     response.body()?.best_seller ?: emptyList()
@@ -114,9 +107,7 @@ class MainActivity : AppCompatActivity() {
                 bestSellerGridView.adapter = bestSellerGridViewAdapter
             }
 
-            override fun onFailure(call: Call<Product>, t: Throwable) {
-                //Log.d("testLogs", "OnResponse failure ${t.message}")
-            }
+            override fun onFailure(call: Call<Product>, t: Throwable) {}
         })
     }
 
@@ -124,27 +115,19 @@ class MainActivity : AppCompatActivity() {
 
         viewPager = binding.viewPager
 
-        //Does it need?
-        handler = Handler(Looper.myLooper()!!)
-
         val getProductsInterface = GetProductsInterface.create().getProducts()
         getProductsInterface.enqueue(object : Callback<Product> {
             override fun onResponse(
                 call: Call<Product>,
                 response: Response<Product>
             ) {
-/*                Log.d(
-                    "testLogs",
-                    "OnResponse success ${response.body()?.home_store?.get(0)?.title}"
-                )*/
+                compositeDelegateAdapter = CompositeDelegateAdapter(HotSalesDelegateAdapter())
+                viewPager.adapter = compositeDelegateAdapter
 
-                hotSalesAdapter =
-                    HotSalesAdapter(response.body()?.home_store ?: emptyList())
-                viewPager.adapter = hotSalesAdapter
+                compositeDelegateAdapter.swapData(response.body()?.home_store ?: emptyList())
             }
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
-                //Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
 
