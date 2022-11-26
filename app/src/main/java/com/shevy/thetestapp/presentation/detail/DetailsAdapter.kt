@@ -11,8 +11,7 @@ import com.shevy.thetestapp.R
 import com.shevy.thetestapp.data.model.detail.Detail
 
 class DetailsAdapter(
-    private val detailsItem: Detail?,
-    private val viewPager2: ViewPager2
+    private val detailsItem: Detail?
 ) :
     RecyclerView.Adapter<DetailsAdapter.DetailViewHolder>() {
 

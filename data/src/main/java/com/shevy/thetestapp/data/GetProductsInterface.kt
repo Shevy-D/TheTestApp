@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 interface GetProductsInterface {
 
-    //https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175
-
     @GET("v3/654bd15e-b121-49ba-a588-960956b15175")
     fun getProducts() : Call<Product>
 
@@ -18,13 +16,11 @@ interface GetProductsInterface {
         var BASE_URL = "https://run.mocky.io/"
 
         fun create() : GetProductsInterface {
-
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build()
             return retrofit.create(GetProductsInterface::class.java)
-
         }
     }
 }

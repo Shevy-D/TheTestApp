@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
 import com.shevy.thetestapp.data.model.products.HomeStore
@@ -39,19 +38,10 @@ class HotSalesAdapter(
             .load(itemProducts.picture)
             .into(holder.productView)
 
-        if (!itemProducts.is_new){
+        if (!itemProducts.is_new) {
             holder.new.visibility = View.GONE
         }
-/*        if (position == product.size - 1) {
-            viewPager2.post(runnable)
-        }*/
     }
 
     override fun getItemCount(): Int = product.size
-
-/*    @SuppressLint("NotifyDataSetChanged")
-    private val runnable = Runnable {
-        product.addAll(product)
-        notifyDataSetChanged()
-    }*/
 }

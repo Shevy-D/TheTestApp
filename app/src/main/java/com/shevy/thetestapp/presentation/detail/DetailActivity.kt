@@ -4,9 +4,6 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -26,7 +23,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
     private lateinit var adapter: DetailsAdapter
-    //private val sliderHandler: Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,32 +41,24 @@ class DetailActivity : AppCompatActivity() {
                 call: Call<Detail>,
                 response: Response<Detail>
             ) {
-                Log.d(
-                    "testLogs",
-                    "OnResponse success ${response.body()}"
-                )
-
                 adapter =
-                    DetailsAdapter(response.body(), viewPager)
+                    DetailsAdapter(response.body())
                 viewPager.adapter = adapter
 
                 initDetailViewData(response.body()!!)
             }
 
             override fun onFailure(call: Call<Detail>, t: Throwable) {
-                Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
 
         val transformer = CompositePageTransformer()
         transformer.run {
             addTransformer(MarginPageTransformer(40))
-            addTransformer(object : ViewPager2.PageTransformer {
-                override fun transformPage(page: View, position: Float) {
-                    val r = 1 - abs(position)
-                    page.scaleY = 0.85f + r * 0.14f
-                }
-            })
+            addTransformer { page, position ->
+                val r = 1 - abs(position)
+                page.scaleY = 0.85f + r * 0.14f
+            }
         }
 
         viewPager.run {
@@ -79,13 +67,6 @@ class DetailActivity : AppCompatActivity() {
             clipToPadding = false
             getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             setPageTransformer(transformer)
-/*            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-                    sliderHandler.removeCallbacks(sliderRunnable)
-                    sliderHandler.postDelayed(sliderRunnable, 2000)
-                }
-            })*/
         }
     }
 
@@ -136,20 +117,4 @@ class DetailActivity : AppCompatActivity() {
         val price = "$${(responseDetail.price / 1000)},${(responseDetail.price % 1000)}.00"
         binding.priceAddToCart.text = price
     }
-
-/*    private val sliderRunnable: Runnable = Runnable() {
-        run() {
-            viewPager.setCurrentItem(viewPager.currentItem + 1)
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        sliderHandler.removeCallbacks(sliderRunnable)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        sliderHandler.postDelayed(sliderRunnable, 2000)
-    }*/
 }

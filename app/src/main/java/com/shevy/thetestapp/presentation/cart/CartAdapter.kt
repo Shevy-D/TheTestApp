@@ -40,5 +40,4 @@ class CartAdapter(
     }
 
     override fun getItemCount(): Int = cartItems?.size ?: 0
-
 }

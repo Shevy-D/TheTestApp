@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 interface GetCartInterface {
 
-    //https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149
-
     @GET("v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149")
     fun getCartItems(): Call<Basket>
 

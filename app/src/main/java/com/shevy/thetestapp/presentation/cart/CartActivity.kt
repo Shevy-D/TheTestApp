@@ -1,7 +1,6 @@
 package com.shevy.thetestapp.presentation.cart
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +22,6 @@ class CartActivity : AppCompatActivity() {
         binding = ActivityCartBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
         initCartAdapter()
-
     }
 
     private fun initCartAdapter() {
@@ -34,11 +32,6 @@ class CartActivity : AppCompatActivity() {
         val getCartInterface = GetCartInterface.create().getCartItems()
         getCartInterface.enqueue(object : Callback<Basket> {
             override fun onResponse(call: Call<Basket>, response: Response<Basket>) {
-                Log.d(
-                    "testLogs",
-                    "OnResponse success ${response.body()?.basket?.get(0)?.title}"
-                )
-
                 adapter = CartAdapter(response.body()?.basket)
                 cartRecyclerView.adapter = adapter
 
@@ -46,16 +39,13 @@ class CartActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Basket>, t: Throwable) {
-                Log.d("testLogs", "OnResponse failure ${t.message}")
             }
         })
     }
 
     private fun initCartViewData(basket: Basket?) {
-
         val price = "$${(basket?.total?.div(1000))},${(basket?.total?.rem(1000))} us"
         binding.totalPrice.text = price
         binding.deliveryText.text = basket?.delivery
-
     }
 }
