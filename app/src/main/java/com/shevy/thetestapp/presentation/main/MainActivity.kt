@@ -6,14 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.size
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.navigation.NavigationView
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.DataApi
 import com.shevy.thetestapp.databinding.ActivityMainBinding
 import com.shevy.thetestapp.domain.DataInteractor
+import com.shevy.thetestapp.domain.model.basket.Basket
 import com.shevy.thetestapp.domain.model.products.Product
 import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
 import com.shevy.thetestapp.presentation.cart.CartActivity
@@ -21,9 +24,6 @@ import com.shevy.thetestapp.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,9 +53,25 @@ class MainActivity : AppCompatActivity() {
         initAdapterHotSales()
         initGridViewBestSeller()
 
-        binding.cartBottomNavigation.setOnClickListener {
+/*        binding.cartBottomNavigation.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }*/
+
+        lifecycleScope.launch {
+            val numbers = getCartResponse().basket.size
+            val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.nav_cart)
+            badge.isVisible = numbers > 0
+            badge.number = numbers
+        }
+
+        val cartBtn = findViewById<BottomNavigationItemView>(R.id.nav_cart)
+        cartBtn.setOnClickListener {
             startActivity(Intent(this, CartActivity::class.java))
         }
+    }
+
+    private suspend fun getCartResponse(): Basket {
+        return interactor.getCart().await()
     }
 
 /*    private fun testFunctionForSpinnerInBottomSheet() {
@@ -89,7 +105,6 @@ class MainActivity : AppCompatActivity() {
         val bottomSheetButton = binding.showFilter
 
         bottomSheetButton.setOnClickListener {
-
             val bottomSheetDialog =
                 BottomSheetDialog(this@MainActivity, R.style.BottomSheetDialogTheme)
             val bottomSheetView = LayoutInflater.from(applicationContext)
@@ -105,7 +120,6 @@ class MainActivity : AppCompatActivity() {
 
         bestSellerGridViewAdapter = BestSellerGridViewAdapter(this@MainActivity)
         bestSellerGridView.adapter = bestSellerGridViewAdapter
-
 
         lifecycleScope.launch {
             val products = getProductsResponse()
@@ -128,22 +142,6 @@ class MainActivity : AppCompatActivity() {
             val products = getProductsResponse()
             compositeDelegateAdapter.swapData(products.home_store)
         }
-
-/*        val getProducts = DataApi.create().getProducts()
-        getProducts.enqueue(object : Callback<Product> {
-            override fun onResponse(
-                call: Call<Product>,
-                response: Response<Product>
-            ) {
-                compositeDelegateAdapter = CompositeDelegateAdapter(HotSalesDelegateAdapter())
-                viewPager.adapter = compositeDelegateAdapter
-
-                compositeDelegateAdapter.swapData(response.body()?.home_store ?: emptyList())
-            }
-
-            override fun onFailure(call: Call<Product>, t: Throwable) {
-            }
-        })*/
 
         viewPager.run {
             offscreenPageLimit = 3

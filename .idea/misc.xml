@@ -118,7 +118,7 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_cart.xml" value="0.17214397496087636" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_details.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_hot_sales.xml" value="0.253125" />
-        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/best_seller_container.xml" value="0.5526315789473685" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/cart_container.xml" value="0.2" />
@@ -129,6 +129,7 @@
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.2" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/layout/product_details_container.xml" value="0.14739583333333334" />
         <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/menu/bottom_nav.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/dmitr/AndroidStudioProjects/TheTestApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.1" />
         <entry key="..\:/Users/dmitr/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.1" />
       </map>

@@ -11,16 +11,12 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.DataApi
-import com.shevy.thetestapp.domain.model.detail.Detail
 import com.shevy.thetestapp.databinding.ActivityDetailsBinding
 import com.shevy.thetestapp.domain.DataInteractor
+import com.shevy.thetestapp.domain.model.detail.Detail
 import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import kotlin.math.abs
 
 class DetailActivity : AppCompatActivity() {
