@@ -10,32 +10,35 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.model.products.BestSeller
+import com.shevy.thetestapp.domain.model.products.BestSeller
 import com.shevy.thetestapp.presentation.detail.DetailActivity
 
 
 class BestSellerGridViewAdapter(
-    private val context: Context,
-    private val bestSellerList: List<BestSeller>/*,
-    private val onClick: () -> Unit*/
+    private val context: Context/*,
+    private val bestSellerList: List<BestSeller>*/
 ) :
     BaseAdapter() {
 
-    override fun getCount(): Int {
-        return bestSellerList.size
+    private val bestSellerList = mutableListOf<BestSeller>()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setProducts(newBestSellerList: List<BestSeller>) {
+        bestSellerList.apply {
+            clear()
+            addAll(newBestSellerList)
+        }
+        notifyDataSetChanged()
     }
 
-    override fun getItem(position: Int): Any {
-        return bestSellerList[position]
-    }
+    override fun getCount(): Int = bestSellerList.size
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
+    override fun getItem(position: Int): Any = bestSellerList[position]
+
+    override fun getItemId(position: Int): Long = position.toLong()
 
     @SuppressLint("ViewHolder", "SetTextI18n")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {

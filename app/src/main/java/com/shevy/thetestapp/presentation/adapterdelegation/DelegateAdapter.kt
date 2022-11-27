@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 interface DelegateAdapter {
-    // same rv.adapter methods to delegate
     fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
     fun onBindViewHolder(holder: RecyclerView.ViewHolder, items: List<Any>, position: Int)
     fun onRecycled(holder: RecyclerView.ViewHolder)

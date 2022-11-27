@@ -2,7 +2,7 @@ package com.shevy.thetestapp.presentation.cart
 
 import android.annotation.SuppressLint
 import com.bumptech.glide.Glide
-import com.shevy.thetestapp.data.model.basket.HomeStoreBasket
+import com.shevy.thetestapp.domain.model.basket.HomeStoreBasket
 import com.shevy.thetestapp.databinding.CartContainerBinding
 import com.shevy.thetestapp.presentation.adapterdelegation.ViewBindingDelegateAdapter
 

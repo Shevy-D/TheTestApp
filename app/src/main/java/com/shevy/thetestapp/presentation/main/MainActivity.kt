@@ -6,19 +6,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.shevy.thetestapp.data.GetProductsInterface
 import com.shevy.thetestapp.R
+import com.shevy.thetestapp.data.DataApi
 import com.shevy.thetestapp.databinding.ActivityMainBinding
-import com.shevy.thetestapp.data.model.products.Product
+import com.shevy.thetestapp.domain.DataInteractor
+import com.shevy.thetestapp.domain.model.products.Product
 import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
 import com.shevy.thetestapp.presentation.cart.CartActivity
+import com.shevy.thetestapp.viewmodel.MainViewModel
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +32,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var bestSellerGridView: GridView
     private lateinit var compositeDelegateAdapter: CompositeDelegateAdapter
+
+    private val interactor: DataInteractor by inject()
+
+    private val mainViewModel by viewModel<MainViewModel>()
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         //testFunctionForSpinnerInBottomSheet()
 
         initAdapterHotSales()
-        initRecyclerViewBestSeller()
+        initGridViewBestSeller()
 
         binding.cartBottomNavigation.setOnClickListener {
             startActivity(Intent(this, CartActivity::class.java))
@@ -90,33 +99,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initRecyclerViewBestSeller() {
+    private fun initGridViewBestSeller() {
 
         bestSellerGridView = binding.bestSellerGridview
 
-        val getProductsInterface = GetProductsInterface.create().getProducts()
-        getProductsInterface.enqueue(object : Callback<Product> {
-            override fun onResponse(
-                call: Call<Product>,
-                response: Response<Product>
-            ) {
-                bestSellerGridViewAdapter = BestSellerGridViewAdapter(
-                    this@MainActivity,
-                    response.body()?.best_seller ?: emptyList()
-                )
-                bestSellerGridView.adapter = bestSellerGridViewAdapter
-            }
+        bestSellerGridViewAdapter = BestSellerGridViewAdapter(this@MainActivity)
+        bestSellerGridView.adapter = bestSellerGridViewAdapter
 
-            override fun onFailure(call: Call<Product>, t: Throwable) {}
-        })
+
+        lifecycleScope.launch {
+            val products = getProductsResponse()
+            bestSellerGridViewAdapter.setProducts(products.best_seller)
+        }
+    }
+
+    private suspend fun getProductsResponse(): Product {
+        return interactor.getProducts().await()
     }
 
     private fun initAdapterHotSales() {
 
         viewPager = binding.viewPager
 
-        val getProductsInterface = GetProductsInterface.create().getProducts()
-        getProductsInterface.enqueue(object : Callback<Product> {
+        compositeDelegateAdapter = CompositeDelegateAdapter(HotSalesDelegateAdapter())
+        viewPager.adapter = compositeDelegateAdapter
+
+        lifecycleScope.launch {
+            val products = getProductsResponse()
+            compositeDelegateAdapter.swapData(products.home_store)
+        }
+
+/*        val getProducts = DataApi.create().getProducts()
+        getProducts.enqueue(object : Callback<Product> {
             override fun onResponse(
                 call: Call<Product>,
                 response: Response<Product>
@@ -129,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
             }
-        })
+        })*/
 
         viewPager.run {
             offscreenPageLimit = 3

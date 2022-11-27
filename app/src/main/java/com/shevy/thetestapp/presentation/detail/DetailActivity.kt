@@ -5,15 +5,19 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.shevy.thetestapp.R
-import com.shevy.thetestapp.data.GetDetailInterface
-import com.shevy.thetestapp.data.model.detail.Detail
+import com.shevy.thetestapp.data.DataApi
+import com.shevy.thetestapp.domain.model.detail.Detail
 import com.shevy.thetestapp.databinding.ActivityDetailsBinding
+import com.shevy.thetestapp.domain.DataInteractor
 import com.shevy.thetestapp.presentation.adapterdelegation.CompositeDelegateAdapter
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +28,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     private lateinit var viewPager: ViewPager2
     private lateinit var compositeDelegateAdapter: CompositeDelegateAdapter
+    private val interactor: DataInteractor by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,24 +44,16 @@ class DetailActivity : AppCompatActivity() {
 
         viewPager = binding.viewPagerProductDetails
 
-        val getDetailInterface = GetDetailInterface.create().getDetail()
-        getDetailInterface.enqueue(object : Callback<Detail> {
-            override fun onResponse(
-                call: Call<Detail>,
-                response: Response<Detail>
-            ) {
+        compositeDelegateAdapter = CompositeDelegateAdapter(DetailDelegateAdapter())
+        viewPager.adapter = compositeDelegateAdapter
 
-                compositeDelegateAdapter = CompositeDelegateAdapter(DetailDelegateAdapter())
-                viewPager.adapter = compositeDelegateAdapter
+        lifecycleScope.launch {
+            val details = getDetailsResponse()
 
-                compositeDelegateAdapter.swapData(response.body()?.images ?: emptyList())
+            compositeDelegateAdapter.swapData(details.images)
 
-                initDetailViewData(response.body()!!)
-            }
-
-            override fun onFailure(call: Call<Detail>, t: Throwable) {
-            }
-        })
+            initDetailViewData(details)
+        }
 
         val transformer = CompositePageTransformer()
         transformer.run {
@@ -74,6 +71,10 @@ class DetailActivity : AppCompatActivity() {
             getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             setPageTransformer(transformer)
         }
+    }
+
+    private suspend fun getDetailsResponse(): Detail {
+        return interactor.getDetail().await()
     }
 
     @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
