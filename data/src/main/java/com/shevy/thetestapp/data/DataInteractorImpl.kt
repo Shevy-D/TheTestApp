@@ -4,7 +4,6 @@ import com.shevy.thetestapp.domain.model.detail.Detail
 import com.shevy.thetestapp.domain.model.products.Product
 import com.shevy.thetestapp.domain.DataInteractor
 import com.shevy.thetestapp.domain.model.basket.Basket
-import com.shevy.thetestapp.domain.model.products.BestSeller
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +22,6 @@ class DataInteractorImpl(private val api: DataApi) : DataInteractor {
     }
 
     override fun getProducts(): Deferred<Product> = scope.async {
-        val listProduct = api.getProducts()
-        return@async listProduct
+        return@async api.getProducts()
     }
 }

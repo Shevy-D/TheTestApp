@@ -3,8 +3,6 @@ package com.shevy.thetestapp.data
 import com.shevy.thetestapp.domain.model.basket.Basket
 import com.shevy.thetestapp.domain.model.detail.Detail
 import com.shevy.thetestapp.domain.model.products.Product
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 interface DataApi {
@@ -19,15 +17,6 @@ interface DataApi {
     suspend fun getProducts() : Product
 
     companion object {
-
         var BASE_URL = "https://run.mocky.io/"
-
-        fun create(): DataApi {
-            val retrofit = Retrofit.Builder()
-                .addConverterFactory(MoshiConverterFactory.create())
-                .baseUrl(BASE_URL)
-                .build()
-            return retrofit.create(DataApi::class.java)
-        }
     }
 }
