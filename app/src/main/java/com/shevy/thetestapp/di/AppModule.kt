@@ -10,10 +10,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 val appModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { MainViewModel() }
 
     single<DataInteractor> { DataInteractorImpl(get()) }
-    //singleOf(::GifsInteractorImpl) { bind<GifInteractor>()}  можно и так делать
     single<Retrofit> {
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
