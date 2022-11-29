@@ -13,7 +13,7 @@ This is a test application for selection for an interview.
 <img align="left" alt="Screen3" width="185px" src="https://user-images.githubusercontent.com/96663113/200588142-813be94c-5ddf-4fbe-994b-7ed6fc16820f.jpg" />
 <img align="center" alt="Screen4" width="185px" src="https://user-images.githubusercontent.com/96663113/200588152-0303019b-a4c1-47d0-95c4-89e000979e5e.jpg" /> -->
 
-<img align="center" alt="Screen4" height="450px" src="[https://user-images.githubusercontent.com/96663113/200910818-a0108541-5a8a-4ed7-8e26-82f1d29339cd.png" />
+<img align="center" alt="Screen4" height="450px" src="https://user-images.githubusercontent.com/96663113/204580906-28fb0e65-635a-4394-baad-f0d19974aeed.png" />
 <!--![Google Pixel 3 Presentation](https://user-images.githubusercontent.com/96663113/204580906-28fb0e65-635a-4394-baad-f0d19974aeed.png) -->
 
 ### Main Features
