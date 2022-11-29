@@ -53,6 +53,7 @@
             android:layout_marginBottom="6sp"
             android:fontFamily="@font/markpro"
             android:letterSpacing="-0.02"
+            android:layout_marginEnd="20sp"
             tools:text="Galaxy"
             android:textColor="@color/white"
             android:textSize="20sp"
