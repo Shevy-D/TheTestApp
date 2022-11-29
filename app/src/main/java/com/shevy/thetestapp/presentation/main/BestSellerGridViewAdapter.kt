@@ -18,8 +18,7 @@ import com.shevy.thetestapp.presentation.detail.DetailActivity
 
 
 class BestSellerGridViewAdapter(
-    private val context: Context/*,
-    private val bestSellerList: List<BestSeller>*/
+    private val context: Context
 ) :
     BaseAdapter() {
 
@@ -73,7 +72,6 @@ class BestSellerGridViewAdapter(
             val intent = Intent(context, DetailActivity::class.java)
             view.context.startActivity(intent)
         }
-
         return view
     }
 }

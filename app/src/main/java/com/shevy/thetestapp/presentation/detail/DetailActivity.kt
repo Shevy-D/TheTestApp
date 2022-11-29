@@ -39,15 +39,12 @@ class DetailActivity : AppCompatActivity() {
     private fun initAdapterProductDetails() {
 
         viewPager = binding.viewPagerProductDetails
-
         compositeDelegateAdapter = CompositeDelegateAdapter(DetailDelegateAdapter())
         viewPager.adapter = compositeDelegateAdapter
 
         lifecycleScope.launch {
             val details = getDetailsResponse()
-
             compositeDelegateAdapter.swapData(details.images)
-
             initDetailViewData(details)
         }
 

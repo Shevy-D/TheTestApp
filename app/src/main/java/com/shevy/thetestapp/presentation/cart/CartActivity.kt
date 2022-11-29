@@ -34,15 +34,12 @@ class CartActivity : AppCompatActivity() {
 
         cartRecyclerView = binding.cartRV
         cartRecyclerView.layoutManager = LinearLayoutManager(this)
-
         compositeDelegateAdapter = CompositeDelegateAdapter(CartDelegateAdapter())
         cartRecyclerView.adapter = compositeDelegateAdapter
 
         lifecycleScope.launch {
             val cart = getCartResponse()
-
             compositeDelegateAdapter.swapData(cart.basket)
-
             initCartViewData(cart)
         }
     }

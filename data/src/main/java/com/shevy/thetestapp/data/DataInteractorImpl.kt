@@ -1,9 +1,9 @@
 package com.shevy.thetestapp.data
 
-import com.shevy.thetestapp.domain.model.detail.Detail
-import com.shevy.thetestapp.domain.model.products.Product
 import com.shevy.thetestapp.domain.DataInteractor
 import com.shevy.thetestapp.domain.model.basket.Basket
+import com.shevy.thetestapp.domain.model.detail.Detail
+import com.shevy.thetestapp.domain.model.products.Product
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
