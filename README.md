@@ -5,12 +5,12 @@ This is a test application for selection for an interview.
 
 ### Screenshots
 ---
-<img align="center" alt="Screen4" height="450px" src="https://user-images.githubusercontent.com/96663113/204580906-28fb0e65-635a-4394-baad-f0d19974aeed.png" />
+<img align="center" alt="Screen" height="450px" src="https://user-images.githubusercontent.com/96663113/204580906-28fb0e65-635a-4394-baad-f0d19974aeed.png" />
 
 ### Video
 ---
 
-<img align="center" alt="Screen4" height="450px" src="https://user-images.githubusercontent.com/96663113/204581882-763d75ee-0565-4252-a48d-f82207c9ecad.mp4" />
+<img align="center" alt="Video" height="450px" src="https://user-images.githubusercontent.com/96663113/204581882-763d75ee-0565-4252-a48d-f82207c9ecad.mp4" />
 
 <!-- https://user-images.githubusercontent.com/96663113/204581882-763d75ee-0565-4252-a48d-f82207c9ecad.mp4 -->
 
