@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32sp"
         android:layout_marginTop="23sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale">
+        app:layout_constraintStart_toStartOf="@id/image_hot_sale"
+        app:layout_constraintTop_toTopOf="@id/image_hot_sale">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -58,8 +58,8 @@
         android:text="Title"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
+        app:layout_constraintStart_toStartOf="@id/image_hot_sale"
+        app:layout_constraintTop_toTopOf="@id/image_hot_sale" />
 
     <TextView
         android:id="@+id/text_description"
@@ -72,8 +72,8 @@
         android:text="Description"
         android:textColor="@color/white"
         android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
+        app:layout_constraintStart_toStartOf="@id/image_hot_sale"
+        app:layout_constraintTop_toTopOf="@id/image_hot_sale" />
 
     <ImageView
         android:id="@+id/btn_buy_now"
@@ -82,8 +82,8 @@
         android:layout_marginStart="32sp"
         android:layout_marginTop="142sp"
         android:background="@drawable/ic_btn_buy_now_background"
-        app:layout_constraintStart_toStartOf="@+id/image_hot_sale"
-        app:layout_constraintTop_toTopOf="@+id/image_hot_sale" />
+        app:layout_constraintStart_toStartOf="@id/image_hot_sale"
+        app:layout_constraintTop_toTopOf="@id/image_hot_sale" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,9 +93,9 @@
         android:text="@string/buy_now"
         android:textColor="@color/black_from_figma"
         android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_buy_now"
-        app:layout_constraintEnd_toEndOf="@+id/btn_buy_now"
-        app:layout_constraintStart_toStartOf="@+id/btn_buy_now"
-        app:layout_constraintTop_toTopOf="@+id/btn_buy_now" />
+        app:layout_constraintBottom_toBottomOf="@id/btn_buy_now"
+        app:layout_constraintEnd_toEndOf="@id/btn_buy_now"
+        app:layout_constraintStart_toStartOf="@id/btn_buy_now"
+        app:layout_constraintTop_toTopOf="@id/btn_buy_now" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
